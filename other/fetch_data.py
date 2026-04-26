@@ -14,13 +14,13 @@ def glass_types_data():
     X = glass_identification.data.features 
     y = glass_identification.data.targets 
   
-    # metadata 
-    print(glass_identification.metadata) 
+    # # metadata 
+    # print(glass_identification.metadata) 
   
-    # variable information 
-    print(glass_identification.variables)
+    # # variable information 
+    # print(glass_identification.variables)
 
-    print(X)
+    # print(X)
 
     feature_names = glass_identification.variables[glass_identification.variables['role'] == 'Feature']['name'].tolist()
     target_name = glass_identification.variables[glass_identification.variables['role'] == 'Target']['name'].values[0]
