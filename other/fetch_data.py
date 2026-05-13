@@ -23,10 +23,11 @@ def glass_types_data():
     # print(X)
 
     feature_names = glass_identification.variables[glass_identification.variables['role'] == 'Feature']['name'].tolist()
+    features = [feature_names[3], feature_names[4]]
     target_name = glass_identification.variables[glass_identification.variables['role'] == 'Target']['name'].values[0]
 
-    df = pd.DataFrame(glass_identification.data.features, columns=feature_names)
+    df = pd.DataFrame(glass_identification.data.features, columns=features)
     df[target_name] = glass_identification.data.targets
 
-    return df, target_name
+    return df, target_name, features
 

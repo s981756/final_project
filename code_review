@@ -2,17 +2,17 @@
 
 
 ## 1. Basic Info
- - Reviewer:
- - Author of code:
- - Project name:
- - Date:
+ - Reviewer: Ella Dalton
+ - Author of code: Kaitlyn Murray
+ - Project name: Glass identifier
+ - Date: 05/04/2026
 
 ---
 
 ## 2. What the Code is Supposed to Do
 
 In my understanding, this program is trying to...
-
+Is trying to guess the type of glass based off of the compositions that the user gives them. Also, maybe try to give the user how accurate the program is and some graphs.
 
 ---
 
@@ -21,50 +21,50 @@ In my understanding, this program is trying to...
 Does the code work as expected?
 
 - [ ] Works as expected  
-- [ ] Partially works  
+- [X ] Partially works  #it works but it is not completely done with the part that predicts the glass based off of the user inputs.
 - [ ] Does not work  
 
 **Notes:**
-- What works:
-- What doesn't work:
+- What works: the machine learning part, getting the data in, and making the graphs and accuracy score.
+- What doesn't work: it does not take an input in and predicts the user’s glass and other things
 - Any error messages:
 
 ---
 
 ## 4. Code Clarity & Readability
 
-- [ ] Easy to read  
+- [X ] Easy to read  
 - [ ] Somewhat confusing  
 - [ ] Hard to follow  
 
 **Comments:**
-- Are variable names meaningful?
-- Are functions clearly named?
-- Is the code logically organized?
+- Are variable names meaningful? yes
+- Are functions clearly named? yes
+- Is the code logically organized? yes
 
 ---
 
 ## 5. Structure & Design
 
-- [ ] Well structured  
+- [X ] Well structured  
 - [ ] Needs improvement  
 - [ ] Disorganized  
 
 **Comments:**
-- Are functions used well?
-- Is there repeated code that could be simplified?
-- Could anything be broken into smaller functions?
+- Are functions used well? yes
+- Is there repeated code that could be simplified? no
+- Could anything be broken into smaller functions? no
 
 ---
 
 ## 6. Python Best Practices
 
-- [ ] Good practices used  
+- [ X] Good practices used  
 - [ ] Some issues  
 - [ ] Major issues  
 
 **Check for:**
-- Proper indentation
+- Proper indentation 
 - Clean and readable code
 - Appropriate use of loops and conditionals
 - Avoidance of unnecessary global variables
@@ -74,20 +74,20 @@ Does the code work as expected?
 ## 7. Bugs or Issues Found
 
 Be specific and helpful.
-
+I did not really see any bug or issues in this code other than the fact that in the main code there is no variables in there and so the Class may produce errors but that can be fixed when the code is finished there.
 ---
 
 ## 8. Suggested Improvements
 
 Provide actionable suggestions:
-
+I would suggest maybe that if the idea of making the machine learning predict values from the user, it might be easier to just show them where the glass they are looking for might be on a graph.
 
 ---
 
 ## 9. Positive Feedback
 
 List at least two things done well:
-
+I like your organization and your function names.  
 
 ---
 
@@ -96,8 +96,9 @@ List at least two things done well:
 Overall evaluation:
 
 - [ ] Excellent  
-- [ ] Good  
+- [X ] Good  
 - [ ] Needs improvement  
 - [ ] Needs significant revision  
 
 **Summary:**
+I think your code looked very good. The main suggesting being that if the input user predicting thing does not work out for you then I would recommend showing them where they fall on the graph. I would also maybe rename one of your folders to something else than “other” to something like starting code. Also, from what I can see your class is set up for a good start just make sure you don’t forget to set the variables before the other functions. 

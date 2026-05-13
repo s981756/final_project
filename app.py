@@ -6,6 +6,8 @@ from other.making_plots import make_plot
 #importing build_model() function
 from other.ml_model import build_model
 
+from other.user import User
+
 # from other.program import get_elements
 
 import pandas as pd
@@ -28,4 +30,19 @@ from sklearn.neighbors import KNeighborsClassifier
 # get_elements()
 
 # #running function to use ml_model
-build_model()
+# build_model()
+
+# comp1 = float(input("Please enter the comp of Al in your glass sample: "))
+# comp2 = float(input("Please enter the comp of Si in your glass sample: "))
+
+comp1 = 2.5
+comp2 = 74.3
+
+build_model(comp1, comp2)
+
+
+
+
+
+
+
