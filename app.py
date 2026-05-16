@@ -24,14 +24,14 @@ from sklearn.neighbors import KNeighborsClassifier
 # #running function to make different plots
 # make_plot('Al', 'Si')
 
-menu_option = int(input("Welcome to the Glass Identifier. Please select one option from the menu: \n  1. Run program\n  2. See accuracy of model\n"))
+menu_option = float(input("Welcome to the Glass Identifier. Please select one option from the menu: \n  1. Run program\n  2. See accuracy of model\n"))
 if menu_option == 1:
     print("Please insert the composition of each element found within your glass sample.")
     comp1 = float(input("Al: "))
-    comp2 = float(input("Si: "))
-    if Al_comp < 0.29 or Al_comp > 3.5:
+    comp2 = float(input("Si: \n"))
+    if comp1 < 0.29 or comp1 > 3.5:
         print("Sorry, invaild number.")
-    elif Si_comp < 69.81 or Si_comp > 75.41:
+    elif comp2 < 69.81 or comp2 > 75.41:
         print("Sorry, invalid number.")
     else:
         predict(comp1, comp2)

@@ -21,24 +21,12 @@ def build_model():
     knn = KNeighborsClassifier(n_neighbors=k)
 
     #fitting data from dataset into model
+
     return knn, X, y
 
+
+
 def accuracy_of_model():
-
-    knn, X, y = build_model()
-
-    X_train, X_test, y_train, y_test = train_test_split(
-        X,
-        y,
-        test_size=0.3,
-        random_state=42,
-        stratify=y
-    )
-
-    knn = KNeighborsClassifier(n_neighbors=19)
-    knn.fit(X_train, y_train)
-    y_pred = knn.predict(X_test)
-    y_train_pred = knn.predict(X_train)
 
     # create confusion matrix
     conf_matrix_knn = pd.crosstab(
@@ -47,13 +35,6 @@ def accuracy_of_model():
         rownames=['Actual'],
         colnames=['Predicted']
     )
-
-    # compute accuracy on test data
-    accuracy_knn = (y_pred == y_test).mean()
-
-    # display results on test data
-    print("Accuracy for Testing Data:")
-    print(f"KNN classifier accuracy (k={19}): {accuracy_knn:.2%}\n")
     
     print("Confusion Matrix for Testing Data:")
     print(conf_matrix_knn)
