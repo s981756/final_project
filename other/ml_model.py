@@ -20,14 +20,30 @@ def build_model():
     k = 19
     knn = KNeighborsClassifier(n_neighbors=k)
 
-    #fitting data from dataset into model
+    knn.fit(X, y)
 
-    return knn, X, y
+    X_train, X_test, y_train, y_test = train_test_split(
+        X,
+        y,
+        test_size=0.3,
+        random_state=42,
+        stratify=y
+    )
 
+    knn = KNeighborsClassifier(n_neighbors=19)
+    knn.fit(X_train, y_train)
+
+    y_pred = knn.predict(X_test)
+    y_train_pred = knn.predict(X_train)
+
+
+    return knn, X_train, y_train, X_test, y_test, y_pred, y_train_pred
 
 
 def accuracy_of_model():
 
+    knn, X_train, y_train, X_test, y_test, y_pred, y_train_pred = build_model()
+    
     # create confusion matrix
     conf_matrix_knn = pd.crosstab(
         y_test,

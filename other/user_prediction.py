@@ -8,20 +8,7 @@ import os
 
 def predict(Al_comp, Si_comp):
 
-    knn, X, y = build_model()
-
-    knn.fit(X, y)
-
-    X_train, X_test, y_train, y_test = train_test_split(
-        X,
-        y,
-        test_size=0.3,
-        random_state=42,
-        stratify=y
-    )
-
-    knn = KNeighborsClassifier(n_neighbors=19)
-    knn.fit(X_train, y_train)
+    knn, X_train, y_train, X_test, y_test, y_pred, y_train_pred = build_model()
 
     #predicting user input
     user_comps = pd.DataFrame({'Al': [Al_comp], 'Si': [Si_comp]})
@@ -39,16 +26,14 @@ def predict(Al_comp, Si_comp):
 
     glass_type = glass_types[prediction[0]]
 
-    print(f"The model predicted that your glass sample is most likely from a {glass_type}.\n")
-
-    y_pred = knn.predict(X_test)
-    y_train_pred = knn.predict(X_train)
+    print(f"\nThe model predicted that your glass sample is most likely from a {glass_type}.\n")
 
     # compute accuracy on test data
     accuracy_knn = (y_pred == y_test).mean()
 
     # display results on test data
-    print("Accuracy Score:")
+    print("\nAccuracy Score:")
     print(f"KNN classifier accuracy (k={19}): {accuracy_knn:.2%}\n")
+    print("_________________________________________________________________________________\n")
 
   
