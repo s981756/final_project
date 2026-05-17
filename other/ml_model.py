@@ -9,7 +9,7 @@ from other.fetch_data import glass_types_data
 
 def build_model():
 
-    df, target_name, features = glass_types_data()
+    df, target_name = glass_types_data()
 
     X = df[features]
     #glass type
@@ -55,12 +55,6 @@ def accuracy_of_model():
     print("Confusion Matrix for Testing Data:")
     print(conf_matrix_knn)
 
-    # Add a 'correct' column for the visualization on test data
-    test_df = X_test.copy()
-    test_df['Type_of_glass'] = y_test
-    test_df['KNN_prediction'] = y_pred
-    test_df['correct'] = test_df['KNN_prediction'] == test_df['Type_of_glass']
-
     # Add a 'correct' column for the visualization on training data
     train_df = X_train.copy()
     train_df['Type_of_glass'] = y_train
@@ -91,6 +85,12 @@ def accuracy_of_model():
     # plt.savefig('example/e_ml_model/plots/knn_model_training_results.png', dpi=150)
     # plt.close()
 
+    # Add a 'correct' column for the visualization on test data
+    test_df = X_test.copy()
+    test_df['Type_of_glass'] = y_test
+    test_df['KNN_prediction'] = y_pred
+    test_df['correct'] = test_df['KNN_prediction'] == test_df['Type_of_glass']
+
     # Create a visualization for test data
     plt.figure(figsize=(8, 6))
     sns.scatterplot(
@@ -110,3 +110,6 @@ def accuracy_of_model():
     plt.grid(True)
     plt.savefig('/workspaces/final_project/plots/knn_model_test_results.png', dpi=150)
     plt.close()
+
+    print("\nA visualization for test data has been made and put into the 'plots' folder.\n")
+    print("_________________________________________________________________________________\n")

@@ -23,6 +23,9 @@ from sklearn.neighbors import KNeighborsClassifier
 
 # #running function to make different plots
 # make_plot('Al', 'Si')
+make_plot('Al', 'K')
+make_plot('Fe', 'Si')
+
 
 menu_option = 0
 

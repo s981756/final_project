@@ -5,10 +5,11 @@ import seaborn as sns
 
 # 'sepal length' is a possible factor
 def make_plot(element_1, element_2):
+    
     element_1_label = element_1.replace('_', ' ')
     element_2_label = element_2.replace('_', ' ')
     
-    df, target_name, features = glass_types_data()
+    df, target_name = glass_types_data()
 
     os.makedirs("plots", exist_ok=True)
 
