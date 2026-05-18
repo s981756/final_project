@@ -11,6 +11,7 @@ def predict(Al_comp, Si_comp):
     knn, X_train, y_train, X_test, y_test, y_pred, y_train_pred = build_model()
 
     #predicting user input
+    #I needed a little bit of help with the prediction part so i did some rersearch and asked AI to help me and it gave me these 2 lines of code:
     user_comps = pd.DataFrame({'Al': [Al_comp], 'Si': [Si_comp]})
     prediction = knn.predict(user_comps)
 
