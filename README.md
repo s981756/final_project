@@ -7,6 +7,8 @@ Name: Kaitlyn Murray
 
 Video summary: 
 
+[Video of Project](https://drive.google.com/file/d/1myGPU2-TyDY6ibXVcKkwEBi7KWnkkUEb/view?usp=sharing)
+
 **Purpose of Project**
 
 The purpose of this project was to use a Glass Identification dataset to build a Machine Learning model that uses a KNN classifier to identify glass samples based on the composition of Al and Si in them. This could be used in foresic studies and sciences as it could provide insight into where glass samples came from.
@@ -16,13 +18,14 @@ The purpose of this project was to use a Glass Identification dataset to build a
 To begin, I used pandas and matplotlib in order to create visualizations of the different elements contained in the glass samples in the UCI dataset. I generated many plots to see which variables would be the best to build my KNN model. 
 These are some of the plots:
 
-<img src="/workspaces/final_project/plots/Al_v_K.png" alt="Al" width=325 height=225>
+<img src="/workspaces/final_project/plots/Al_v_K.png" width=325 height=225>
 <img src="/workspaces/final_project/plots/Fe_v_Si.png" width=325 height=225>
 <img src="/workspaces/final_project/plots/Al_v_Si.png" width=325 height=225>
 
+
 I ultimately chose to use Al and Si as the two variables for the model. This is because the plot looked like it had the most defined groups of each of the glass types, so it would have the most accurate KNN classifier model.
 
-For the KNN classier, I ultimately chose a k value of 19, as I tried many different k values and this one had the greates accuracy when working with the test data. 
+For the KNN classier, I ultimately chose a k value of 19, as I tried many different k values and this one had the greates accuracy when working with the test data. The accuracy of the model is 63.08%.
 
 **Running Program**
 

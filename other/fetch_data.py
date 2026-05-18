@@ -20,11 +20,12 @@ def glass_types_data():
     # # variable information 
     # print(glass_identification.variables)
 
-    # print(X)
-
+    # features of rows (glass samples)
     feature_names = glass_identification.variables[glass_identification.variables['role'] == 'Feature']['name'].tolist()
+    # glass types for each row
     target_name = glass_identification.variables[glass_identification.variables['role'] == 'Target']['name'].values[0]
 
+    #putting into dataframe using pandas
     df = pd.DataFrame(glass_identification.data.features, columns=feature_names)
     df[target_name] = glass_identification.data.targets
 

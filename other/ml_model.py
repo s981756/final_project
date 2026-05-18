@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from other.fetch_data import glass_types_data
 
-
+#main code for building model
 def build_model():
 
     df, target_name = glass_types_data()
@@ -20,6 +20,7 @@ def build_model():
     k = 19
     knn = KNeighborsClassifier(n_neighbors=k)
 
+    #fitting model to dataset
     knn.fit(X, y)
 
     X_train, X_test, y_train, y_test = train_test_split(
@@ -29,9 +30,6 @@ def build_model():
         random_state=42,
         stratify=y
     )
-
-    knn = KNeighborsClassifier(n_neighbors=19)
-    knn.fit(X_train, y_train)
 
     y_pred = knn.predict(X_test)
     y_train_pred = knn.predict(X_train)
