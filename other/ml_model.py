@@ -11,7 +11,7 @@ def build_model():
 
     df, target_name = glass_types_data()
 
-    X = df[features]
+    X = df[['Al', 'Si']]
     #glass type
     y = df['Type_of_glass']
 
@@ -61,29 +61,27 @@ def accuracy_of_model():
     train_df['KNN_prediction'] = y_train_pred
     train_df['correct'] = train_df['KNN_prediction'] == train_df['Type_of_glass']
 
-    # Create a visualization of KNN classifier results
-    os.makedirs("example/e_ml_model/plots", exist_ok=True)
-
     # Create a visualization for training data
-    # I left this commented out, but feel free to toggle this plot to see training results.
-    # plt.figure(figsize=(8, 6))
-    # sns.scatterplot(
-    #     data=train_df,
-    #     x='petal length',
-    #     y='petal width',
-    #     hue='correct',
-    #     style='correct',
-    #     s=100,
-    #     palette={True: 'green', False: 'red'}
-    # )
+    plt.figure(figsize=(8, 6))
+    sns.scatterplot(
+        data=train_df,
+        x='Al',
+        y='Si',
+        hue='correct',
+        style='correct',
+        s=100,
+        palette={True: 'green', False: 'red'}
+    )
 
-    # plt.title('KNN Algorithm (Training Set): Correct vs Incorrect Predictions')
-    # plt.xlabel('Petal Length (cm)')
-    # plt.ylabel('Petal Width (cm)')
-    # plt.legend(title='Prediction Correct')
-    # plt.grid(True)
-    # plt.savefig('example/e_ml_model/plots/knn_model_training_results.png', dpi=150)
-    # plt.close()
+    plt.title('KNN Algorithm: Correct vs Incorrect Predictions')
+    plt.xlabel('Al composition')
+    plt.ylabel('Si composition')
+    plt.legend(title='Prediction Correct')
+    plt.grid(True)
+    plt.savefig('/workspaces/final_project/plots/knn_model_training_results.png', dpi=150)
+    plt.close()
+
+    print("\nA visualization for the training data has been made and put into the 'plots' folder.\n")
 
     # Add a 'correct' column for the visualization on test data
     test_df = X_test.copy()
@@ -111,5 +109,5 @@ def accuracy_of_model():
     plt.savefig('/workspaces/final_project/plots/knn_model_test_results.png', dpi=150)
     plt.close()
 
-    print("\nA visualization for test data has been made and put into the 'plots' folder.\n")
+    print("\nA visualization for the test data has been made and put into the 'plots' folder.\n")
     print("_________________________________________________________________________________\n")
